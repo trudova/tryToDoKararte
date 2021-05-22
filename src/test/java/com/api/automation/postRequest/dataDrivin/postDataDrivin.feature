@@ -26,7 +26,7 @@ Feature: test the same end point against different data
       | id    | Software Engg | To develop andriod application | 400    |
       | false | Software Engg | To develop andriod application | 400    |
 
-
+  @smoke
   Scenario Outline: job description entry verification using csv file <jobId>
     Given url 'https://jobportalkarate.herokuapp.com'
     And path "/normal/webapi/add"
