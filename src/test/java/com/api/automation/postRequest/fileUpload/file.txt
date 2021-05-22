@@ -1,0 +1,12 @@
+08:58:06.759 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+
+  Background: create and initialise base URL
+    Given url "https://jobportalkarate.herokuapp.com"
+  Scenario: upload the file
+    Given path '/normal/webapi/upload'
+    # need to specify location of the file
+      # name f the file, content-type header value
+    And multipart file file = {read:'file.txt', filename: 'file', Content-Type: 'multipart/form-data;' }
+    When method post
+    Then status 200
+    And print response
